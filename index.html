@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+   
+          <meta charset="UTF-8"/>
+          <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+          <title>convert time</title>
+        
+        <style>
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+             *{
+                box-sizing: border-box;
+            }
+            h1{
+                text-align: center;
+                font-family: cursive;
+            }
+            input,label{
+                display: block;
+                margin-bottom: 15px;
+
+            }
+              
+           
+        
+        </style>
+        
+        
+        
+    </head>
+    
+    
+    <body>
+        
+        
+        <div id="app">
+            
+            
+            <h1>watch  convert  time</h1>
+            <label>Hour :</label>
+            <input type="text" v-model="hour">
+            <label>minute:</label>
+            <input type="text" v-model="minute">
+            <label>second:</label>
+            <input type="text" v-model="second">
+            
+            
+            
+            
+        </div>
+        
+        
+    
+   <!--  <script src="vue.js"></script>-->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>   
+        
+    <script>
+        
+        
+         var inst1 =  new Vue(
+       {
+            el:"#app",
+            
+            data:{
+                
+                hour:0,
+                minute:0,
+                second:0,
+                 
+            },
+           methods :{
+               
+              
+                 
+             }, 
+           
+           watch: {
+               
+                hour : function(m){
+                    /// 1 hour --- 60 m 
+                    this.minute = m *60;
+                    console.log('run hour');
+                    
+                },
+                
+                minute : function(m){
+                    // 1 minute ---- 60s
+                    this.hour = m / 60 ;
+                    this.second = m * 60;
+                    console.log('run minute');
+                    
+                },
+                
+                second : function(m){
+                    this.minute = m / 60;
+                    console.log('run second');
+                    
+                },
+                
+           }
+                
+                
+               
+           
+           
+            })
+        
+    </script>
+     </body>
+</html>
